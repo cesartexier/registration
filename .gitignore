@@ -1,0 +1,14 @@
+# dependencies
+/target
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+*.launch
+.settings/
+*.iml
+
+# System Files
+.DS_Store
+Thumbs.db

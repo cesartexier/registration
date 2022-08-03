@@ -1,0 +1,70 @@
+# Registration api
+
+## Launch project
+
+docker build -t registration/spring-boot-docker .
+docker run -p 8080:8080 registration/spring-boot-docker
+
+## API specification
+
+Swagger available on http://localhost:8080/swagger-ui/index.html
+
+### Create user [POST]
+
+http://localhost:8080/private/api/users
+
++ Request (application/json)
+
+
+{
+ 	"userName":"test",
+	"birthday":"1988-10-10",
+	"countryCode":"FR",
+	"phoneNumber":"123456789",
+	"gender":"M"
+}
+
++ Response 201 (application/json)
+
+	+ Body
+		{
+		 	"userName":"test",
+			"birthday":"1988-10-10",
+			"countryCode":"FR",
+			"phoneNumber":"123456789",
+			"gender":"M"
+		}
+		
+		
+### Get user [GET]
+
+http://localhost:8080/private/api/users/{id}
+
++ Response 302 (application/json)
+
+	+ Body
+		{
+		 	"userName":"test",
+			"birthday":"1988-10-10",
+			"countryCode":"FR",
+			"phoneNumber":"123456789",
+			"gender":"M"
+		}
+		
+
+
+
+## Test api
+
+open registration.postman_collection.json in postman
+
+Contains :
+- createUser
+- createUserNoPhone
+- createUserNoGender
+- createUserMiner
+- createUserNotFrench
+- getUser (by id)
+
+
+
