@@ -6,6 +6,10 @@ import lombok.Setter;
 
 import java.util.Date;
 
+/**
+ * The ErrorMessage
+ * return when APi Exception Handler intercept error
+ */
 @Getter
 @Setter
 @AllArgsConstructor

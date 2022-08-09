@@ -40,7 +40,7 @@ http://localhost:8080/private/api/users
 
 http://localhost:8080/private/api/users/{id}
 
-+ Response 302 (application/json)
++ Response 200 (application/json)
 
 	+ Body
 		{

@@ -1,6 +1,5 @@
 package com.registration.service;
 
-import com.registration.controller.form.CreateUserForm;
 import com.registration.controller.resource.UserResource;
 import com.registration.exception.ResourceNotFoundException;
 import com.registration.mapper.UserMapper;
@@ -43,7 +42,7 @@ class UserServiceTest {
     @Test
     void testCreateUser() {
         // GIVEN
-        final CreateUserForm form = new CreateUserForm();
+        final UserResource form = new UserResource();
         form.setUserName("userName");
         form.setBirthday(LocalDate.of(2000, 1, 1));
         form.setCountryCode("FR");
@@ -60,7 +59,7 @@ class UserServiceTest {
     @Test
     void testCreateUser_without_phoneNumber_and_gender() {
         // GIVEN
-        final CreateUserForm form = new CreateUserForm();
+        final UserResource form = new UserResource();
         form.setUserName("userName");
         form.setBirthday(LocalDate.of(2000, 1, 1));
         form.setCountryCode("FR");
@@ -73,8 +72,8 @@ class UserServiceTest {
     }
 
     @Test
-    void testCreateUser_miner_throw_IllegalArgumentException() {
-        final CreateUserForm form = new CreateUserForm();
+    void testCreateUser_minor_throw_IllegalArgumentException() {
+        final UserResource form = new UserResource();
         form.setUserName("userName");
         form.setBirthday(LocalDate.of(2020, 1, 1));
         form.setCountryCode("FR");
@@ -86,7 +85,7 @@ class UserServiceTest {
 
     @Test
     void testCreateUser_not_french_throw_IllegalArgumentException() {
-        final CreateUserForm form = new CreateUserForm();
+        final UserResource form = new UserResource();
         form.setUserName("userName");
         form.setBirthday(LocalDate.of(2000, 1, 1));
         form.setCountryCode("EN");

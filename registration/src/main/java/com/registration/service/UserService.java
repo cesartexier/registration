@@ -1,6 +1,5 @@
 package com.registration.service;
 
-import com.registration.controller.form.CreateUserForm;
 import com.registration.controller.resource.UserResource;
 import com.registration.exception.ResourceNotFoundException;
 import com.registration.mapper.UserMapper;
@@ -15,6 +14,9 @@ import java.time.Period;
 import static java.lang.String.format;
 import static java.time.LocalDate.now;
 
+/**
+ * User Service
+ */
 @Service
 @RequiredArgsConstructor
 public class UserService {
@@ -25,11 +27,11 @@ public class UserService {
     /**
      * create user
      *
-     * @param form
+     * @param form the user creation form
      * @return userResource
      */
     @Transactional
-    public UserResource createUser(CreateUserForm form) {
+    public UserResource createUser(UserResource form) {
 
         if (!form.getCountryCode().equals("FR")) {
             throw new IllegalArgumentException(format("Country [%s], forbidden", form.getCountryCode()));
@@ -49,9 +51,9 @@ public class UserService {
     /**
      * get user by id
      *
-     * @param id
+     * @param id the user id
      * @return userResource
-     * @throws ResourceNotFoundException
+     * @throws ResourceNotFoundException ex
      */
     @Transactional(readOnly = true)
     public UserResource getUser(Long id) throws ResourceNotFoundException {

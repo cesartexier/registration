@@ -1,7 +1,6 @@
 package com.registration.controller;
 
 import com.registration.annotation.LogExecutionTime;
-import com.registration.controller.form.CreateUserForm;
 import com.registration.controller.resource.UserResource;
 import com.registration.exception.ResourceNotFoundException;
 import com.registration.service.UserService;
@@ -10,6 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * User api controller
+ */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/private/api/users")
@@ -22,10 +24,11 @@ public class UserController {
      *
      * @param form form with user parameters
      * @return userResource
+     * @throws IllegalArgumentException ex => if user parameters invalid
      */
-    @RequestMapping(method = RequestMethod.POST, path = "/create")
+    @RequestMapping(method = RequestMethod.POST)
     @LogExecutionTime
-    public ResponseEntity<UserResource> createUser(@RequestBody CreateUserForm form) throws IllegalArgumentException {
+    public ResponseEntity<UserResource> createUser(@RequestBody UserResource form) throws IllegalArgumentException {
 
         return new ResponseEntity<>(this.userService.createUser(form), HttpStatus.CREATED);
 
@@ -36,13 +39,13 @@ public class UserController {
      *
      * @param id id of user
      * @return userResource
-     * @throws ResourceNotFoundException if user with id not found
+     * @throws ResourceNotFoundException ex => if user with id not found
      */
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
     @LogExecutionTime
     public ResponseEntity<UserResource> getUser(@PathVariable Long id) throws ResourceNotFoundException {
 
-        return new ResponseEntity<>(this.userService.getUser(id), HttpStatus.FOUND);
+        return new ResponseEntity<>(this.userService.getUser(id), HttpStatus.OK);
 
     }
 }

@@ -8,12 +8,22 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
 
+/**
+ * Execution Time Aspect
+ * Log execution time of methods
+ */
 @Aspect
 @Component
 public class ExecutionTimeAspect {
 
     private static final Logger logger = LoggerFactory.getLogger(RestControllerAspect.class);
 
+    /**
+     * define @LogExecutionTime annotation execution for the Around Advice
+     * Log execution time of the method
+     *
+     * @param joinPoint the AspectJ ProceedingJoinPoint
+     */
     @Around("@annotation(com.registration.annotation.LogExecutionTime)")
     public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
         final StopWatch stopWatch = new StopWatch();

@@ -6,6 +6,9 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+/**
+ * User Entity
+ */
 @Entity
 @Table(name = "user")
 @Getter
