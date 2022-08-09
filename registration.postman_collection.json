@@ -27,7 +27,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/private/api/users/create",
+					"raw": "http://localhost:8080/private/api/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -36,8 +36,7 @@
 					"path": [
 						"private",
 						"api",
-						"users",
-						"create"
+						"users"
 					]
 				}
 			},
@@ -65,7 +64,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/private/api/users/create",
+					"raw": "http://localhost:8080/private/api/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -74,8 +73,7 @@
 					"path": [
 						"private",
 						"api",
-						"users",
-						"create"
+						"users"
 					]
 				}
 			},
@@ -103,7 +101,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/private/api/users/create",
+					"raw": "http://localhost:8080/private/api/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -112,15 +110,14 @@
 					"path": [
 						"private",
 						"api",
-						"users",
-						"create"
+						"users"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "createUserMiner",
+			"name": "createUserMinor",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -141,7 +138,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/private/api/users/create",
+					"raw": "http://localhost:8080/private/api/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -150,8 +147,7 @@
 					"path": [
 						"private",
 						"api",
-						"users",
-						"create"
+						"users"
 					]
 				}
 			},
@@ -179,7 +175,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/private/api/users/create",
+					"raw": "http://localhost:8080/private/api/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -188,8 +184,7 @@
 					"path": [
 						"private",
 						"api",
-						"users",
-						"create"
+						"users"
 					]
 				}
 			},
@@ -203,26 +198,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "userName",
-							"value": "test",
-							"type": "default"
-						},
-						{
-							"key": "birthday",
-							"value": "1988/10/10",
-							"type": "default"
-						},
-						{
-							"key": "countryCode",
-							"value": "FR",
-							"type": "default"
-						}
-					]
-				},
 				"url": {
 					"raw": "localhost:8080/private/api/users/1",
 					"host": [
