@@ -2,7 +2,7 @@
 
 ## Launch project
 
-docker build -t registration/spring-boot-docker .
+docker build -t registration/spring-boot-docker . --no-cache
 docker run -p 8080:8080 registration/spring-boot-docker
 
 ## API specification
